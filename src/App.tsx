@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Accordion from "./components/Accordeon/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 
 function App() {
@@ -8,75 +9,32 @@ function App() {
 
     return (
         <div className="App">
-            <Title/>
-            <Rating/>
-            <Accordeon/>
-            <Rating/>
+            <PageTitle title={"This is Header Title Element!"}/>
+            <PageTitle title={"This is other user"}/>
+
+            <Rating value={4}/>
+            <Accordion title={"The first accordion"} collapsed={true}/>
+            <Rating value={3}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Accordion title={"The second accordion"} collapsed={false}/>
+            <Rating value={5}/>
+            <Rating value={1}/>
+            <Rating value={0}/>
 
         </div>
     );
 }
 
-function Title() {
-    console.log('Title randering')
-    return (
-        <>
-            This is Header Title Element!
-        </>
-    )
+type PageTitlePropsType = {
+    title: string
 }
-
-function Rating() {
-    console.log('Rating randering')
+function PageTitle(props: PageTitlePropsType) {
+    console.log('PageTitle randering')
     return (
-        <>
-            <Star/>
-            <Star/>
-
-        </>
-    )
-}
-
-function Accordeon() {
-    console.log('Accordeon randering')
-    return (
-        <>
-            <AccordeonTitle/>
-            <AccordeonBody/>
-        </>
-    )
-}
-
-function AccordeonTitle() {
-    console.log('Accordeon Title randering')
-    return (
-        <>
-            This is Accordeon!
-        </>
-    )
-}
-
-function AccordeonBody() {
-    console.log('Accordeon Body randering')
-    return (
-        <>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>
-        </>
-    )
-}
-
-function Star() {
-    console.log('Star randering')
-    return (
-        <>
-            <h2>Star</h2>
-        </>
+        <h2>
+            {props.title}
+        </h2>
     )
 }
 
