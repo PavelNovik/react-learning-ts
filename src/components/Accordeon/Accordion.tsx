@@ -8,16 +8,11 @@ type AccordionPropsType = {
 
 function Accordion(props: AccordionPropsType) {
     console.log('Accordeon randering')
-    return !props.collapsed ? (
-        <>
+    return <>
             <AccordionTitle title={props.title}/>
-            <AccordionBody/>
+            { !props.collapsed && <AccordionBody/>}
         </>
-    ) : (
-        <>
-            <AccordionTitle title={props.title}/>
-        </>
-    )
+
 }
 
 type AccordionTitlePropsType = {

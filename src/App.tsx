@@ -9,8 +9,8 @@ function App() {
 
     return (
         <div className="App">
-            <PageTitle title={"This is Header Title Element!"}/>
-            <PageTitle title={"This is other user"}/>
+            {/*<PageTitle title={"This is Header Title Element!"}/>*/}
+            {/*<PageTitle title={"This is other user"}/>*/}
 
             <Rating value={4}/>
             <Accordion title={"The first accordion"} collapsed={true}/>
