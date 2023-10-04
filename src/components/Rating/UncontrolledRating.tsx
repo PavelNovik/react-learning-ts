@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
-type StarValueType = 0 | 1 | 2 | 3 | 4 | 5
+export type StarValueType = 0 | 1 | 2 | 3 | 4 | 5
 
-const UncontrolledRaiting = () => {
+const UncontrolledRating = () => {
     const [starValue, setStarValue] = useState<StarValueType>(0)
     return (
         <div>
@@ -30,4 +30,4 @@ function Star(props: StarPropsType) {
 
 }
 
-export default UncontrolledRaiting;
+export default UncontrolledRating;

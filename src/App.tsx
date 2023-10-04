@@ -1,42 +1,48 @@
 import React, {useState} from 'react';
 import './App.css';
-// import Accordion from "./components/Accordeon/Accordion";
-// import {Rating} from "./components/Rating/Rating";
+import Accordion from "./components/Accordeon/Accordion";
+import {Rating} from "./components/Rating/Rating";
 import OnOFF from "./components/OnOff/OnOFF";
 import UncontrolledAccordion from "./components/Accordeon/UncontrolledAccordion";
-import UncontrolledRaiting from "./components/Rating/UncontrolledRaiting";
+import UncontrolledRating from "./components/Rating/UncontrolledRating";
+import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
+import {RatingType} from "./components/Rating/Rating";
 
 
 function App() {
-    console.log('App randering')
+    // console.log('App rendering')
     const [onIndicator, setOnIndicator] = useState<boolean>(false)
+    const [rating, setRating] = useState<RatingType>(0)
+    const [collapsed, setCollapsed] = useState<boolean>(true)
 
     const changeLightHandler = (isOn: boolean) => {
         setOnIndicator(isOn)
     }
+    const changeRating = (value: RatingType) => {
+        setRating(value)
+    }
+    const changeAccordionCollapsed = () => {
+        setCollapsed(!collapsed)
+    }
 
     return (
         <div className="App">
-            {/*<OnOFF on={onIndicator} changeLight={changeLightHandler}/>*/}
-            {/*<OnOFF on={onIndicator} changeLight={changeLightHandler}/>*/}
-            <UncontrolledAccordion title={"Uncontrolled accordion 1"} />
-            <UncontrolledAccordion title={"Uncontrolled accordion 2"} />
+            <UncontrolledOnOff on={onIndicator} changeLight={changeLightHandler}/>
+            <UncontrolledAccordion title={"Uncontrolled accordion 1"}/>
+            {/*<UncontrolledAccordion title={"Uncontrolled accordion 2"} />*/}
             <OnOFF/>
-            <OnOFF/>
-<UncontrolledRaiting/>
-<UncontrolledRaiting/>
+            {/*<OnOFF/>*/}
+            <UncontrolledRating/>
+            {/*<UncontrolledRating/>*/}
             {/*<PageTitle title={"This is Header Title Element!"}/>*/}
             {/*<PageTitle title={"This is other user"}/>*/}
 
-            {/*<Rating value={4}/>*/}
-            {/*<Accordion title={"The first accordion"} collapsed={true}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
+            <Rating value={rating} changeRating={changeRating}/>
+
+            <Accordion title={"Controlled accordion 1"} collapsed={collapsed} changeAccordionCollapsed={changeAccordionCollapsed}/>
+
             {/*<Accordion title={"The second accordion"} collapsed={false}/>*/}
-            {/*<Rating value={5}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={0}/>*/}
+
 
         </div>
     );
@@ -47,7 +53,7 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log('PageTitle randering')
+    // console.log('PageTitle rendering')
     return (
         <h2>
             {props.title}
