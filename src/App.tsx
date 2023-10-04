@@ -27,23 +27,19 @@ function App() {
 
     return (
         <div className="App">
-            <UncontrolledOnOff on={onIndicator} changeLight={changeLightHandler}/>
-            <UncontrolledAccordion title={"Uncontrolled accordion 1"}/>
-            {/*<UncontrolledAccordion title={"Uncontrolled accordion 2"} />*/}
-            <OnOFF/>
-            {/*<OnOFF/>*/}
-            <UncontrolledRating/>
-            {/*<UncontrolledRating/>*/}
-            {/*<PageTitle title={"This is Header Title Element!"}/>*/}
-            {/*<PageTitle title={"This is other user"}/>*/}
-
-            <Rating value={rating} changeRating={changeRating}/>
-
+            <PageTitle title={"Controlled Elements"}/>
             <Accordion title={"Controlled accordion 1"} collapsed={collapsed} changeAccordionCollapsed={changeAccordionCollapsed}/>
-
+            <Rating value={rating} changeRating={changeRating}/>
+            <OnOFF on={onIndicator} changeLight={changeLightHandler}/>
+            <PageTitle title={"Uncontrolled Elements"}/>
+            <UncontrolledAccordion title={"Uncontrolled accordion 1"}/>
+            <UncontrolledRating/>
+            <UncontrolledOnOff />
+            {/*<UncontrolledAccordion title={"Uncontrolled accordion 2"} />*/}
+            {/*<OnOFF/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<PageTitle title={"This is other user"}/>*/}
             {/*<Accordion title={"The second accordion"} collapsed={false}/>*/}
-
-
         </div>
     );
 }
@@ -55,7 +51,7 @@ type PageTitlePropsType = {
 function PageTitle(props: PageTitlePropsType) {
     // console.log('PageTitle rendering')
     return (
-        <h2>
+        <h2 style={{color: "darkgoldenrod"}}>
             {props.title}
         </h2>
     )
