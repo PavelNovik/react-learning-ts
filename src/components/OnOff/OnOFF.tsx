@@ -1,10 +1,10 @@
 import React from 'react';
 
-type PropsType = {
+export type OnOffPropsType = {
     on: boolean
     changeLight: (isOn: boolean) => void
 }
-const OnOff = (props: PropsType) => {
+const OnOff = (props: OnOffPropsType) => {
 
 
     const onStyle = {

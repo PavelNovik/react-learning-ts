@@ -24,7 +24,7 @@ type AccordionTitlePropsType = {
 function AccordionTitle(props: AccordionTitlePropsType) {
     // console.log('Accordion Title rendering')
     return (
-        <h2 onClick={props.onClick}>{props.title}</h2>
+        <h2 onClick={(e)=>props.onClick()}>{props.title}</h2>
     )
 }
 
