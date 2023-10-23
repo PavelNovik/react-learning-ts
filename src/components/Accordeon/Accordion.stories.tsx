@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 
-import Accordion from './Accordion';
+import {Accordion} from './Accordion';
 import {useState} from "react";
 
 // const meta: Meta<typeof Accordion> = {
@@ -11,7 +11,7 @@ import {useState} from "react";
 // export default meta;
 
 export default {
-    title: "Accordion",
+    title: "Controlled Accordion",
     component: Accordion
 }
 
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Accordion>;
 
 export const FirstStory: Story = {
     args: {
-        title: "Hello",
+        title: "Hello, I'm Controlled Accordion",
         collapsed: true,
         changeAccordionCollapsed: () => {
             onChangeActionHandler()

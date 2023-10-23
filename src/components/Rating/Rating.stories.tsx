@@ -11,7 +11,7 @@ import {Rating, RatingType} from "./Rating";
 // export default meta;
 
 export default {
-    title: "Rating",
+    title: "Controlled Rating",
     component: Rating
 }
 

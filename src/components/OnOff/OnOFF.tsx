@@ -4,7 +4,7 @@ export type OnOffPropsType = {
     on: boolean
     changeLight: (isOn: boolean) => void
 }
-const OnOff = (props: OnOffPropsType) => {
+export const OnOff = (props: OnOffPropsType) => {
 
 
     const onStyle = {
@@ -46,4 +46,4 @@ const OnOff = (props: OnOffPropsType) => {
     );
 };
 
-export default OnOff;
+// export default OnOff;

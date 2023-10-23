@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordeon/Accordion";
+import {Accordion} from "./components/Accordeon/Accordion";
 import {Rating} from "./components/Rating/Rating";
-import OnOFF from "./components/OnOff/OnOFF";
-import UncontrolledAccordion from "./components/Accordeon/UncontrolledAccordion";
-import UncontrolledRating from "./components/Rating/UncontrolledRating";
-import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
+import {OnOff} from "./components/OnOff/OnOFF";
+import {UncontrolledAccordion} from "./components/Accordeon/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 import {RatingType} from "./components/Rating/Rating";
 
 
@@ -30,7 +30,7 @@ function App() {
             <PageTitle title={"Controlled Elements"}/>
             <Accordion title={"Controlled accordion 1"} collapsed={collapsed} changeAccordionCollapsed={changeAccordionCollapsed}/>
             <Rating value={rating} changeRating={changeRating}/>
-            <OnOFF on={onIndicator} changeLight={changeLightHandler}/>
+            <OnOff on={onIndicator} changeLight={changeLightHandler}/>
             <PageTitle title={"Uncontrolled Elements"}/>
             <UncontrolledAccordion title={"Uncontrolled accordion 1"}/>
             <UncontrolledRating/>

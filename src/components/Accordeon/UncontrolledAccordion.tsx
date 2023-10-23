@@ -8,7 +8,7 @@ type AccordionPropsType = {
     title: string
 
 }
-const UncontrolledAccordion = (props: AccordionPropsType) => {
+export const UncontrolledAccordion = (props: AccordionPropsType) => {
     const [isCollapsed, setIsCollapsed] = useState(true)
     const onCLickHandler = () => {
         setIsCollapsed(!isCollapsed)
@@ -40,4 +40,4 @@ function AccordionBody() {
     )
 }
 
-export default UncontrolledAccordion;
+// export default UncontrolledAccordion;

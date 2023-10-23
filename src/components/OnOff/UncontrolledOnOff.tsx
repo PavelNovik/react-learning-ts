@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 
+
+type PropsType = {
+    onChange?: (val: boolean) => void,
+    defaultOn?: boolean
+}
 // Условный рендеринг
-const UncontrolledOnOff = () => {
-    const [on, setOn] = useState(false)
+export const UncontrolledOnOff = (props: PropsType) => {
+    const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
     const onStyle = {
         width: "40px",
@@ -34,11 +39,19 @@ const UncontrolledOnOff = () => {
 
     return (
         <div>
-            <div style={onStyle} onClick={() => setOn(true)}>On</div>
-            <div style={offStyle} onClick={() => setOn(false)}>Off</div>
+            <div style={onStyle} onClick={() => {
+                setOn(true);
+                if(props.onChange) props.onChange(true)
+            }}>On
+            </div>
+            <div style={offStyle} onClick={() => {
+                setOn(false);
+               if(props.onChange) props.onChange(false)
+            }}>Off
+            </div>
             <div style={idicatorStyle}></div>
         </div>
     );
 };
 
-export default UncontrolledOnOff;
+// export default UncontrolledOnOff;

@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 
 import React, {useState} from "react";
-import OnOff from "./OnOFF";
+import {OnOff} from "./OnOFF";
 
 // const meta: Meta<typeof OnOff> = {
 //     component: OnOff,
@@ -11,7 +11,7 @@ import OnOff from "./OnOFF";
 // export default meta;
 
 export default {
-    title: "OnOff",
+    title: "Controlled OnOff",
     component: OnOff
 }
 
