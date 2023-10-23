@@ -35,11 +35,7 @@ function App() {
             <UncontrolledAccordion title={"Uncontrolled accordion 1"}/>
             <UncontrolledRating/>
             <UncontrolledOnOff />
-            {/*<UncontrolledAccordion title={"Uncontrolled accordion 2"} />*/}
-            {/*<OnOFF/>*/}
-            {/*<UncontrolledRating/>*/}
-            {/*<PageTitle title={"This is other user"}/>*/}
-            {/*<Accordion title={"The second accordion"} collapsed={false}/>*/}
+
         </div>
     );
 }
@@ -49,7 +45,6 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    // console.log('PageTitle rendering')
     return (
         <h2 style={{color: "darkgoldenrod"}}>
             {props.title}
