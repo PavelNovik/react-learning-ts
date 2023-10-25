@@ -8,7 +8,12 @@ type AccordionPropsType = {
     title: string
 
 }
+type AccordionBodyPropsType = {
+    items: string[]
+
+}
 export const UncontrolledAccordion = (props: AccordionPropsType) => {
+    const items = ['Pawel', 'Lera', 'Hleb', 'Vera', 'Tanya', 'Lena', 'Siarhey']
     const [isCollapsed, setIsCollapsed] = useState(true)
     const onCLickHandler = () => {
         setIsCollapsed(!isCollapsed)
@@ -17,7 +22,7 @@ export const UncontrolledAccordion = (props: AccordionPropsType) => {
 
     return <>
         <AccordionTitle onClick={onCLickHandler} title={props.title}/>
-        {!isCollapsed && <AccordionBody/>}
+        {!isCollapsed && <AccordionBody items={items}/>}
     </>
 
 }
@@ -28,14 +33,10 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     )
 }
 
-function AccordionBody() {
+function AccordionBody(props: AccordionBodyPropsType) {
     return (
         <ul style={{listStyle: 'none'}}>
-            <li> 1 </li>
-            <li> 2 </li>
-            <li> 3 </li>
-            <li> 4 </li>
-            <li> 5 </li>
+            {props.items.map((i,ind) => <li key={ind}>{i}</li>)}
         </ul>
     )
 }
