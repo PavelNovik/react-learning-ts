@@ -7,18 +7,37 @@ import {UncontrolledAccordion} from "./components/Accordeon/UncontrolledAccordio
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 import {RatingType} from "./components/Rating/Rating";
+import Select from "./components/Select/Select";
+import MySelect from "./components/Select/MySelect";
 
 export type ItemType = {
     title: string
     value: any
+}
+export type CountryType = {
+    title: string
+    id: string
 }
 function App() {
     // console.log('App rendering')
     const [onIndicator, setOnIndicator] = useState<boolean>(false)
     const [rating, setRating] = useState<RatingType>(0)
     const [collapsed, setCollapsed] = useState<boolean>(true)
+// For MySelect
+    const [collaps, setCollaps] = useState<boolean>(true)
+    const [select, setSelect] = useState<undefined | string>(undefined)
+    const countries: CountryType[] = [{title: 'none', id: '0'}, {title: 'Belarus', id: '1'}, {
+        title: 'Poland',
+        id: '2'
+    }, {
+        title: 'Ukraine',
+        id: '3'
+    }, {title: 'Lithuania', id: '4'}, {title: 'Latvia', id: '5'}]
 
+    // For Accordion
     const items: ItemType[] = [{title: 'Pawel', value:1}, {title: 'Lera', value:2}, {title: 'Hleb', value:3}, {title: 'Vera', value:4}, {title: 'Tanya', value:5}, {title: 'Lena', value:6}, {title: 'Siarhey', value:7}]
+
+
 
     const changeLightHandler = (isOn: boolean) => {
         setOnIndicator(isOn)
@@ -33,6 +52,13 @@ function App() {
     const onClick= (value: any)=> {
 
     }
+    const onClickSelect = () => {
+        setCollaps(!collaps)
+    }
+    const onChangeSelect = (id: string) => {
+        setSelect(id)
+        onClickSelect()
+    }
 
     return (
         <div className="App">
@@ -44,6 +70,8 @@ function App() {
             <UncontrolledAccordion title={"Uncontrolled accordion 1"}/>
             <UncontrolledRating/>
             <UncontrolledOnOff />
+            <Select />
+            <MySelect select={select} data={countries} collaps={collaps} onClick={onClickSelect} onChange={onChangeSelect}/>
 
         </div>
     );
