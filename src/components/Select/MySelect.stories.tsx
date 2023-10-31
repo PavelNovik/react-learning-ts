@@ -28,7 +28,7 @@ export const FirstMySelectStory: Story = {
 
 export const MyControlledSelect = () => {
     const [coll, setColl] = useState<boolean>(true)
-    const [sel, setSel] = useState<string | undefined>(undefined)
+    const [sel, setSel] = useState<string | undefined>('0')
     return <MySelect data={countries} collaps={coll} select={sel} onClick={() => setColl(!coll)} onChange={(v: string)=> {
         setSel(v)
         setColl(!coll)
