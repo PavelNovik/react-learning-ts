@@ -18,6 +18,7 @@ export type CountryType = {
     title: string
     id: string
 }
+
 function App() {
     // console.log('App rendering')
     const [onIndicator, setOnIndicator] = useState<boolean>(false)
@@ -35,8 +36,10 @@ function App() {
     }, {title: 'Lithuania', id: '4'}, {title: 'Latvia', id: '5'}]
 
     // For Accordion
-    const items: ItemType[] = [{title: 'Pawel', value:1}, {title: 'Lera', value:2}, {title: 'Hleb', value:3}, {title: 'Vera', value:4}, {title: 'Tanya', value:5}, {title: 'Lena', value:6}, {title: 'Siarhey', value:7}]
-
+    const items: ItemType[] = [{title: 'Pawel', value: 1}, {title: 'Lera', value: 2}, {
+        title: 'Hleb',
+        value: 3
+    }, {title: 'Vera', value: 4}, {title: 'Tanya', value: 5}, {title: 'Lena', value: 6}, {title: 'Siarhey', value: 7}]
 
 
     const changeLightHandler = (isOn: boolean) => {
@@ -49,29 +52,30 @@ function App() {
         setCollapsed(!collapsed)
     }
 
-    const onClick= (value: any)=> {
+    const onClick = (value: any) => {
 
     }
-    const onClickSelect = () => {
-        setCollaps(!collaps)
+    const onClickSelect = (arg: boolean) => {
+        setCollaps(arg)
     }
     const onChangeSelect = (id: string) => {
         setSelect(id)
-        onClickSelect()
     }
 
     return (
         <div className="App">
             <PageTitle title={"Controlled Elements"}/>
-            <Accordion onClick={onClick} items={items} title={"Controlled accordion 1"} collapsed={collapsed} changeAccordionCollapsed={changeAccordionCollapsed}/>
+            <Accordion onClick={onClick} items={items} title={"Controlled accordion 1"} collapsed={collapsed}
+                       changeAccordionCollapsed={changeAccordionCollapsed}/>
             <Rating value={rating} changeRating={changeRating}/>
             <OnOff on={onIndicator} changeLight={changeLightHandler}/>
             <PageTitle title={"Uncontrolled Elements"}/>
             <UncontrolledAccordion title={"Uncontrolled accordion 1"}/>
             <UncontrolledRating/>
-            <UncontrolledOnOff />
-            <Select />
-            <MySelect select={select} data={countries} collaps={collaps} onClick={onClickSelect} onChange={onChangeSelect}/>
+            <UncontrolledOnOff/>
+            <Select/>
+            <MySelect select={select} data={countries} collaps={collaps} onClick={onClickSelect}
+                      onChange={onChangeSelect}/>
 
         </div>
     );
