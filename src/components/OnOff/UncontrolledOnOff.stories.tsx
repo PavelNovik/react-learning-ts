@@ -12,7 +12,7 @@ import {UncontrolledOnOff} from "./UncontrolledOnOff";
 // export default meta;
 
 export default {
-    title: "Uncontrolled OnOff",
+    title: "React/UncontrolledComponents/Uncontrolled OnOff",
     component: UncontrolledOnOff,
 }
 

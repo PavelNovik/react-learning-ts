@@ -11,7 +11,7 @@ import {OnOff} from "./OnOFF";
 // export default meta;
 
 export default {
-    title: "Controlled OnOff",
+    title: "React/ControlledComponents/Controlled OnOff",
     component: OnOff
 }
 

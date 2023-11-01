@@ -5,7 +5,7 @@ import {useState} from "react";
 import Select from "./Select";
 
 export default {
-    title: "MySelect",
+    title: "React/Select/MySelect",
     component: MySelect
 }
 

@@ -11,7 +11,7 @@ import {UncontrolledRating} from "./UncontrolledRating";
 // export default meta;
 
 export default {
-    title: "Uncontrolled Rating",
+    title: "React/UncontrolledComponents/Uncontrolled Rating",
     component: UncontrolledRating
 }
 

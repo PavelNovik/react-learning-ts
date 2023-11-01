@@ -12,7 +12,7 @@ import {ItemType} from "../../App";
 // export default meta;
 
 export default {
-    title: "Controlled Accordion",
+    title: "React/ControlledComponents/Controlled Accordion",
     component: Accordion
 }
 const items: ItemType[] = [{title: 'Pawel', value:1}, {title: 'Lera', value:2}, {title: 'Hleb', value:3}, {title: 'Vera', value:4}, {title: 'Tanya', value:5}, {title: 'Lena', value:6}, {title: 'Siarhey', value:7}]

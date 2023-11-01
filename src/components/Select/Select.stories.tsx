@@ -2,7 +2,7 @@ import type { StoryObj} from '@storybook/react';
 import Select from "./Select";
 
 export default {
-    title: "Select",
+    title: "React/Select/Select",
     component: Select
 }
 

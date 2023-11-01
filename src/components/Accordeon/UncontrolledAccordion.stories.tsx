@@ -2,7 +2,7 @@ import type {StoryObj} from '@storybook/react';
 import {UncontrolledAccordion} from "./UncontrolledAccordion";
 
 export default {
-    title: "Uncontrolled Accordion",
+    title: "React/UncontrolledComponents/Uncontrolled Accordion",
     component: UncontrolledAccordion,
 }
 
