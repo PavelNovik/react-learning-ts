@@ -4,8 +4,8 @@ export type OnOffPropsType = {
     on: boolean
     changeLight: (isOn: boolean) => void
 }
-export const OnOff = (props: OnOffPropsType) => {
-
+const OnOffS = (props: OnOffPropsType) => {
+    console.log('on off')
 
     const onStyle = {
         width: "40px",
@@ -46,4 +46,6 @@ export const OnOff = (props: OnOffPropsType) => {
     );
 };
 
+
+export const OnOff = React.memo(OnOffS)
 // export default OnOff;

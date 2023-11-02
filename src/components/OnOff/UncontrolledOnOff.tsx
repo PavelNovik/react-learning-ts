@@ -6,9 +6,9 @@ type PropsType = {
     defaultOn?: boolean
 }
 // Условный рендеринг
-export const UncontrolledOnOff = (props: PropsType) => {
+const UncontrolledOnOffS = (props: PropsType) => {
     const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
-
+    console.log('on off unc')
     const onStyle = {
         width: "40px",
         height: "25px",
@@ -54,4 +54,6 @@ export const UncontrolledOnOff = (props: PropsType) => {
     );
 };
 
+
+export const UncontrolledOnOff =React.memo(UncontrolledOnOffS)
 // export default UncontrolledOnOff;

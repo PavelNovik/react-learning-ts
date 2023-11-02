@@ -10,7 +10,7 @@ type MySelectPropsType = {
     select: undefined | string
 }
 
-const MySelect = (props: MySelectPropsType) => {
+const MySelectS = (props: MySelectPropsType) => {
     const [active, setActive] = useState(props.select)
     const activeItem = props.data.find(c => c.id === active)
     const changeSelectValueHandler = (e: MouseEvent<HTMLDivElement>) => {
@@ -43,7 +43,7 @@ const MySelect = (props: MySelectPropsType) => {
         }
         if (e.key === 'ArrowDown') {
             // setActive((active && +active < props.data.length - 1 ? +active + 1 : 5).toString())
-            props.onChange((active && +active < props.data.length - 1 ? +active + 1 : 5).toString())
+            props.onChange((active && +active < props.data.length - 1 ? +active + 1 : props.data.length-1).toString())
             // active && props.onChange(active)
         }
         if (e.key === 'Enter') {
@@ -66,5 +66,6 @@ const MySelect = (props: MySelectPropsType) => {
         </div>
     );
 };
+const MySelect = React.memo(MySelectS)
 
 export default MySelect;

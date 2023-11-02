@@ -12,7 +12,10 @@ type AccordionBodyPropsType = {
     items: string[]
 
 }
-export const UncontrolledAccordion = (props: AccordionPropsType) => {
+
+export const UncontrolledAccordion = React.memo(UncontrolledAccordionS)
+function  UncontrolledAccordionS  (props: AccordionPropsType) {
+    console.log('rend ua')
     const items = ['Pawel', 'Lera', 'Hleb', 'Vera', 'Tanya', 'Lena', 'Siarhey']
     const [isCollapsed, setIsCollapsed] = useState(true)
     const onCLickHandler = () => {
@@ -27,13 +30,19 @@ export const UncontrolledAccordion = (props: AccordionPropsType) => {
 
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+const AccordionTitle = React.memo(AccordionTitleS)
+function AccordionTitleS(props: AccordionTitlePropsType) {
+    console.log('rend ua title')
+
     return (
         <h2 onClick={props.onClick}>{props.title}</h2>
     )
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+const AccordionBody = React.memo(AccordionBodyS)
+function AccordionBodyS(props: AccordionBodyPropsType) {
+    console.log('rend ua body')
+
     return (
         <ul style={{listStyle: 'none'}}>
             {props.items.map((i,ind) => <li key={ind}>{i}</li>)}
