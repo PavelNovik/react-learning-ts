@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {number} from "prop-types";
 
 export default {
     title: 'React/React.UseEffect/UseEffect demo',
