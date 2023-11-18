@@ -9,6 +9,7 @@ import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 import {RatingType} from "./components/Rating/Rating";
 import Select from "./components/Select/Select";
 import MySelect from "./components/Select/MySelect";
+import {Clock} from "./components/Clock/Clock";
 
 export type ItemType = {
     title: string
@@ -76,6 +77,7 @@ function App() {
             <Select/>
             <MySelect select={select} data={countries} collaps={collaps} onClick={onClickSelect}
                       onChange={onChangeSelect}/>
+            <Clock/>
 
         </div>
     );

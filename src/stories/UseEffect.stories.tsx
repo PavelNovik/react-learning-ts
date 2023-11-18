@@ -158,7 +158,7 @@ export const SetTimeoutExample = () => {
 
 
 export const SetIntervalExample = () => {
-    console.log('SetIntervalExample')
+    // console.log('SetIntervalExample')
     const [counter, setCounter] = useState(1)
     const [fake, setFake] = useState(1)
 
@@ -166,13 +166,13 @@ export const SetIntervalExample = () => {
     useEffect(() => {
         // console.log('useEffect with empty [] of dependencies')
         // console.log('useEffect only first render (ComponentDidMount)')
-        setInterval(() => {
+        const exIntWx = setInterval(() => {
             console.log('interval')
             // setCounter(counter + 1)
             setCounter(state => state + 1)
         }, 1000)
-
-    },[] );
+        return ()=>clearInterval(exIntWx)
+    }, []);
 
     return <>
         {/*<button onClick={() => setCounter(counter + 1)}>counter +</button>*/}
@@ -193,7 +193,7 @@ const divStyles = {
 }
 
 export const ClockExample = () => {
-    console.log('Clock Example')
+    // console.log('Clock Example')
 
     const [currentTime, setCurrentTime] = useState(new Date())
     const sec = currentTime.getSeconds()
@@ -203,19 +203,20 @@ export const ClockExample = () => {
     useEffect(() => {
         // console.log('useEffect with empty [] of dependencies')
         // console.log('useEffect only first render (ComponentDidMount)')
-        setInterval(() => {
-            console.log('interval')
+        const timeInterval = setInterval(() => {
+            console.log('tic')
             // setCounter(counter + 1)
             setCurrentTime(new Date())
         }, 1000)
 
-    },[] );
+        return () => clearInterval(timeInterval)
+    }, []);
 
     return <>
-<div style={divStyles}>
-    <span>{hour} .  </span>
-    <span> {min} .  </span>
-    <span> {sec}</span>
-</div>
+        <div style={divStyles}>
+            <span>{hour} .  </span>
+            <span> {min} .  </span>
+            <span> {sec}</span>
+        </div>
     </>
 }
