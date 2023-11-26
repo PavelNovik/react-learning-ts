@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordeon/Accordion";
 import {Rating} from "./components/Rating/Rating";
@@ -10,6 +10,7 @@ import {RatingType} from "./components/Rating/Rating";
 import Select from "./components/Select/Select";
 import MySelect from "./components/Select/MySelect";
 import {Clock} from "./components/Clock/Clock";
+import {AnalogClock} from "./components/AnalogClock/AnalogClock";
 
 export type ItemType = {
     title: string
@@ -42,7 +43,8 @@ function App() {
         value: 3
     }, {title: 'Vera', value: 4}, {title: 'Tanya', value: 5}, {title: 'Lena', value: 6}, {title: 'Siarhey', value: 7}]
 
-
+    const [isAnalogClock, setIsAnalogClock] = useState(true)
+    const changeClockView = useCallback(() => setIsAnalogClock(!isAnalogClock),[isAnalogClock])
     const changeLightHandler = (isOn: boolean) => {
         setOnIndicator(isOn)
     }
@@ -78,6 +80,7 @@ function App() {
             <MySelect select={select} data={countries} collaps={collaps} onClick={onClickSelect}
                       onChange={onChangeSelect}/>
             <Clock/>
+            <AnalogClock isAnalogClock={isAnalogClock} changeClockView={changeClockView}/>
 
         </div>
     );

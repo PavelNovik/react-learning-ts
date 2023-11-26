@@ -14,7 +14,6 @@ export const Clock: React.FC = () => {
         // console.log('useEffect with empty [] of dependencies')
         // console.log('useEffect only first render (ComponentDidMount)')
         const intervalId = setInterval(() => {
-            console.log('interval')
             setDate(new Date())
         }, 1000)
         return () => clearInterval(intervalId)
