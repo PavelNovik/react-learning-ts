@@ -17,6 +17,7 @@
 }
 
 .digitClockContainer {
+    opacity: 0;
     text-align: center;
     width: 250px;
     height: 100px;
@@ -25,6 +26,12 @@
     position: relative;
     transition: .2s ease-in;
 }
+
+.clocks .digitClockContainer {
+    opacity: 1;
+    transition: .2s ease-in;
+}
+
 
 .clockContainer .secondArrow {
     background-color: black;
@@ -78,7 +85,11 @@
     left: -3px;
 }
 
-.digitClockContainer > span {
+
+
+.digitClockContainer span {
+    opacity: 0;
+    transition: 1s ease-in;
     position: relative;
     text-align: center;
     line-height: 100px;
@@ -100,6 +111,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+.digitClockContainer.active span  {
+    opacity: 1;
+    transition: 1s ease-in;
 }
 
 .digitClockContainer > span:hover {

@@ -23,6 +23,10 @@ export const FirstMySelectStory: Story = {
         data: countries,
         collaps: true,
         select: undefined,
+        onClick: () => {
+        },
+        onChange: () => {
+        }
     },
 }
 

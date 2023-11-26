@@ -23,14 +23,14 @@ export const AnalogClock = memo((props: AnalogClockPropstype) => {
     }, []);
 
 
-    return (<div onClick={props.changeClockView} className={s.clocks}>
-            <div className={props.isAnalogClock ? s.clockContainer : s.digitClockContainer}>
+    return (<div onClick={props.changeClockView} className={s['clocks']}>
+            <div className={props.isAnalogClock ? s.clockContainer : s.digitClockContainer + ' ' + s.active}>
                 {props.isAnalogClock && <div style={{rotate: `${sec * 6}deg`}} className={s.secondArrow}></div>}
                 {props.isAnalogClock && <div style={{rotate: `${min * 6}deg`}} className={s.minuteArrow}></div>}
                 {props.isAnalogClock && <div style={{rotate: `${hour * 30}deg`}} className={s.hourArrow}></div>}
-                {!props.isAnalogClock && <span>{get2digit(hour)}:</span>}
-                {!props.isAnalogClock && <span>{get2digit(min)}:</span>}
-                {!props.isAnalogClock && <span>{get2digit(sec)}</span>}
+                {!props.isAnalogClock && <span>{get2digit(hour)}:{get2digit(min)}:{get2digit(sec)}</span>}
+                {/*{!props.isAnalogClock && <span>{get2digit(min)}:</span>}*/}
+                {/*{!props.isAnalogClock && <span>{get2digit(sec)}</span>}*/}
             </div>
             {/*<button onClick={props.changeClockView}>Change clock view</button>*/}
         </div>
