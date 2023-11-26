@@ -39,6 +39,8 @@
     width: 2px;
     height: 120px;
     border: 1px solid black;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
     left: calc(50% - 1px);
     bottom: 50%;
     /*transform: rotate(25deg);*/
@@ -52,6 +54,8 @@
     width: 6px;
     height: 110px;
     border: 1px solid black;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
     left: calc(50% - 3px);
     bottom: 50%;
     /*transform: rotate(25deg);*/
@@ -65,6 +69,8 @@
     width: 8px;
     height: 80px;
     border: 1px solid black;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
     left: calc(50% - 4px);
     bottom: 50%;
     /*transform: rotate(25deg);*/

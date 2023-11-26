@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {log} from "util";
 
 export default {
     title: 'React/React.UseEffect/UseEffect demo',
@@ -171,7 +172,7 @@ export const SetIntervalExample = () => {
             // setCounter(counter + 1)
             setCounter(state => state + 1)
         }, 1000)
-        return ()=>clearInterval(exIntWx)
+        return () => clearInterval(exIntWx)
     }, []);
 
     return <>
@@ -214,9 +215,56 @@ export const ClockExample = () => {
 
     return <>
         <div style={divStyles}>
-            <span>{hour} .  </span>
-            <span> {min} .  </span>
-            <span> {sec}</span>
+            <span>{hour < 10 ? '0' + hour : hour}:  </span>
+            <span> {min < 10 ? '0' + min : min}: </span>
+            <span> {sec < 10 ? '0' + sec : sec}</span>
         </div>
     </>
+}
+
+export const SetIntervalEx = () => {
+    const [counter, setCounter] = useState(1)
+    useEffect(() => {
+        console.log('effect occurred')
+        return () => console.log('effect over')
+    }, []);
+
+    return <>
+        Hello, counter is: {counter}
+        <button onClick={() => setCounter(counter + 1)}>increase counter</button>
+    </>
+
+}
+
+export const KeyTrackerEx = () => {
+    const [text, setText] = useState('')
+    useEffect(() => {
+        // console.log('effect occurred')
+        const handler = (e: KeyboardEvent) => {
+            console.log(e.key)
+            setText(text + e.key)
+        }
+        window.addEventListener('keypress', handler)
+
+        return () => window.removeEventListener('keypress', handler)
+    }, [text]);
+
+    return <>
+        Hello, key is: {text}
+        {/*<button onClick={() => setCounter(counter + 1)}>increase counter</button>*/}
+    </>
+
+}
+
+export const SetTimeOutEx = () => {
+    const [text, setText] = useState('')
+    useEffect(() => {
+       const timeOut = setTimeout(() => {
+            console.log('setTimeOut Run')
+            setText('3 seconds passed')
+        }, 3000)
+        return () => { clearTimeout(timeOut)
+        }
+    }, [text]);
+    return <>{text}</>
 }
